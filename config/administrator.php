@@ -21,7 +21,7 @@ return array(
      *
      * @type string
      */
-    'title' => config('app.name'),
+    'title' => env('APP_NAME', 'Laravel'),
 
     /*
      * The path to your model config directory
@@ -95,7 +95,7 @@ return array(
      *
      * @type string
      */
-    'home_page' => '',
+    'home_page' => 'users',
 
     /*
      * The route to which the user will be taken when they click the "back to site" button
