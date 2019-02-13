@@ -4,7 +4,7 @@ return [
     'title' => '站点设置',
 
     // 访问权限判断
-    'permission'=> function()
+    'permission' => function()
     {
         // 只允许站长管理站点配置
         return Auth::user()->hasRole('Founder');
