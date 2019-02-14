@@ -12,7 +12,7 @@ return [
     | default location for this type of information, allowing packages
     | to have a conventional place to find your various credentials.
     |
-    */
+     */
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
@@ -42,7 +42,13 @@ return [
 
     'baidu_translate' => [
         'appid' => env('BAIDU_TRANSLATE_APPID'),
-        'key'   => env('BAIDU_TRANSLATE_KEY'),
+        'key' => env('BAIDU_TRANSLATE_KEY'),
+    ],
+
+    'weixin' => [
+        'client_id' => env('WEIXIN_KEY'),
+        'client_secret' => env('WEIXIN_SECRET'),
+        'redirect' => env('WEIXIN_REDIRECT_URI'),
     ],
 
 ];
