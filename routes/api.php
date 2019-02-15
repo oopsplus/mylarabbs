@@ -32,7 +32,7 @@ $api->version('v2', function ($api) {
 ////////////////////////////////////////////////////////////
 $api->version('v1', [
     'namespace' => 'App\Http\Controllers\Api',
-    'middleware' => 'serializer:array'
+    'middleware' => 'serializer:array',
 ], function ($api) {
     $api->group([
         'middleware' => 'api.throttle',
@@ -72,6 +72,14 @@ $api->version('v1', [
             // 当前登录用户信息
             $api->get('user', 'UsersController@me')
                 ->name('api.user.show');
+
+            // 编辑登录用户信息
+            $api->patch('user', 'UsersController@update')
+                ->name('api.user.update');
+
+            // 图片资源
+            $api->post('images', 'ImagesController@store')
+                ->name('api.images.store');
         });
     });
 });
