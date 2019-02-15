@@ -21,6 +21,13 @@ class CaptchasController extends Controller
             'expired_at' => $expiredAt->toDateTimeString(),
             'captcha_image_content' => $captcha->inline(),
         ];
+        \Log::debug('store ...');
+        //for quick debug ^_^
+
+        if (!app()->environment('production') && config('app.debug')) {
+            $result['captcha_code_debug'] = $captcha->getPhrase();
+            \Log::debug('store ... 2');
+        }
 
         return $this->response->array($result)->setStatusCode(201);
     }
