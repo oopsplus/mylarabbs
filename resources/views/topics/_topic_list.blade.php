@@ -35,11 +35,10 @@
             <i class="far fa-clock"></i>
             <span class="timeago" title="最后活跃于：
               @if(if_query('order', 'recent'))
-              {{ $topic->created_at }}
+                {{ $topic->created_at }}
               @else
-              {{ $topic->updated_at }}
-              @endif
-            ">
+                {{ $topic->updated_at }}
+              @endif">
               @if(if_query('order', 'recent'))
               {{ $topic->created_at->diffForHumans() }}
               @else
