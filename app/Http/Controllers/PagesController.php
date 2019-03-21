@@ -11,6 +11,11 @@ class PagesController extends Controller
         return view('pages.root');
     }
 
+    public function testDownload() {
+        $file_name = "uploads/images/IMG_0526.jpg";
+        return response()->download(public_path() . '/' . $file_name);
+    }
+
     public function permissionDenied()
     {
         // 如果当前用户有权限访问后台，直接跳转访问
