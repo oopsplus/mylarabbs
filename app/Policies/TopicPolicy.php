@@ -9,6 +9,7 @@ class TopicPolicy extends Policy
 {
     public function update(User $user, Topic $topic)
     {
+        \Log::debug([$user->id, $topic->user_id]);
         return $user->isAuthorOf($topic);
     }
 
