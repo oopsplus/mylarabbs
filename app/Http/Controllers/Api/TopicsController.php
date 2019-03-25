@@ -48,6 +48,9 @@ class TopicsController extends Controller
 
     public function store(TopicRequest $request, Topic $topic)
     {
+        //for testing locale only
+        //return $this->errorResponse(403, '您还没有通过认证', 1003);
+
         $topic->fill($request->all());
         $topic->user_id = $this->user()->id;
         $topic->save();
